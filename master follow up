@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master Closer Toolkit — DMs Library</title>
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+  body{background:var(--bg2);color:var(--text);}
+  main{max-width:980px;margin:0 auto;padding:16px}
+  .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+  .subtabs button{padding:10px 12px;border-radius:12px;border:1px solid rgba(120,120,150,.25);background:var(--bg);color:var(--text);cursor:pointer}
+  .subtabs button.active{background:linear-gradient(90deg,#f7d36f,#f0c443);border-color:#e4c45f;color:#1a1200;font-weight:800}
+  .pane{display:none}.pane.show{display:block}
+  .block{background:var(--card);border:1px solid rgba(120,120,150,.18);box-shadow:0 6px 20px rgba(0,0,0,.08);border-radius:16px;padding:16px;margin:12px 0}
+  h1,h2,h3{margin:0 0 8px 0}
+  .dm{position:relative;background:var(--bg);border:1px solid rgba(120,120,150,.25);border-radius:12px;padding:12px;margin:10px 0;white-space:pre-wrap}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0 0 0}
+  .pill{border-radius:999px;padding:6px 10px;background:var(--bg);border:1px solid rgba(120,120,150,.25);color:var(--text);cursor:pointer}
+  .copy{position:absolute;right:10px;top:10px}
+  .muted{color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:860px){.grid2{grid-template-columns:1fr 1fr}}
+  code{background:var(--bg2);padding:2px 6px;border-radius:8px;border:1px solid rgba(120,120,150,.18)}
+</style>
+</head>
+<body>
+<main>
+  <a href="../../../index.html" style="text-decoration:none;color:#e6dbff">← Back to OS</a>
+  <h1>Master Closer Toolkit</h1>
+  <p class="muted">Use variables like <code>{{name}}</code>, <code>{{pain}}</code>, <code>{{goal}}</code>, <code>{{platform}}</code>. Keep posture, be kind, close cleanly.</p>
+
+  <nav class="subtabs" id="subtabs">
+    <button data-pane="rotation" class="active">7‑Day Rotation</button>
+    <button data-pane="openers">Openers</button>
+    <button data-pane="video">Video Flow</button>
+    <button data-pane="followups">Follow‑ups</button>
+    <button data-pane="objections">Objections → Reframes</button>
+    <button data-pane="closing">Closing Lines</button>
+    <button data-pane="postSale">After‑Sale & Referrals</button>
+  </nav>
+
+  <section id="rotation" class="pane show">
+    <div class="block">
+      <h3>Daily Targets (3–7 sales/day)</h3>
+      <ul>
+        <li>10 New Conversations → 10 Nudges → 10 Closes</li>
+        <li>3 Short‑form posts or 10 story slides → drive “INFO/VIDEO”</li>
+        <li>Run the scripts below in order; personalize with {{name}}/{{pain}}</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Day 1 — Connect & Qualify</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Hey {{name}} 🖤 I caught your post about {{pain}}. If you could change one thing about your income in 90 days, what would it be?</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+Curious — are you more time‑poor or cash‑stressed right now? (Helps me send the right 12‑min video vs bullets.)</div>
+    </div>
+    <div class="block">
+      <h3>Day 2 — Value & Next Step</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Based on what you said about {{pain}}, the Elite Founders Bundle is the shortcut I used — not more courses, an ecosystem + mentorship. Want the 12‑min video or a 5‑bullet summary?</div>
+    </div>
+    <div class="block">
+      <h3>Day 3 — Nudge with Micro‑Proof</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Quick nudge — the walkthrough link is ready. I started with $130 and a phone; structure → wins → commissions. Want me to send it now while you’ve got momentum?</div>
+    </div>
+    <div class="block">
+      <h3>Day 4 — Clarify Fit</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+If this helped you hit {{goal}} by {{date}}, what would that change at home? Just making sure I point you to the right path (UGC / affiliate / automation).</div>
+    </div>
+    <div class="block">
+      <h3>Day 5 — Direct Close</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+I can get your link set up in 10 minutes. Do you want in with the payment plan (Klarna has $0 down) or one‑and‑done today?</div>
+    </div>
+    <div class="block">
+      <h3>Day 6 — Risk Reversal</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+You don’t start because you have the money — you start because you can’t afford not to keep waiting. If I send the checkout now, are you good to plug in while it’s open?</div>
+    </div>
+    <div class="block">
+      <h3>Day 7 — Final Nudge</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Closing my list tonight. If this isn’t the move, no worries — I’ll cheer you on. If it is, I’ll set you up so your first wins happen this week. Which way should I mark you?</div>
+    </div>
+  </section>
+
+  <section id="openers" class="pane">
+    <div class="grid2">
+      <div class="block">
+        <h3>Warm (You know them)</h3>
+        <div class="dm"><button class="pill copy">Copy</button>
+Hey {{name}} — I’ve watched you juggle {{life}} like a pro. If you had an extra $2–3K/mo without another boss, what would you use it for first?</div>
+        <div class="dm"><button class="pill copy">Copy</button>
+Random Q: are you open to a short video that shows how I built a 5‑figure stream from my phone in months?</div>
+      </div>
+      <div class="block">
+        <h3>Cold (Reply to Story/Post)</h3>
+        <div class="dm"><button class="pill copy">Copy</button>
+That story hit — you’re not alone. If I sent a no‑fluff 12‑min video on {{topic}} that saves you months of guessing, would you watch it?</div>
+        <div class="dm"><button class="pill copy">Copy</button>
+Curious — have you tried {{platform}} for income before? What held it back?</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video" class="pane">
+    <div class="block">
+      <h3>Send Video</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Perfect — here’s the 12‑min walkthrough. It shows the system + mentorship I use. Watch today and I’ll line up your next step while it’s fresh. When done, type “DONE” and I’ll send your setup link.</div>
+    </div>
+    <div class="block">
+      <h3>Check Watch / Nudge</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Did you get a minute to watch it yet? If not, want me to send the 5‑bullet summary so you can decide in 60 seconds?</div>
+    </div>
+    <div class="block">
+      <h3>Price Frame ($699) & Plan</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Clarity check — it’s $699 for the full ecosystem + mentorship. Most choose the plan (Klarna often shows $0 down). Do you want me to prefill checkout for you?</div>
+    </div>
+  </section>
+
+  <section id="followups" class="pane">
+    <div class="block">
+      <h3>Ghosted — Day 1</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Quick tap — should I keep this spot open for you, or circle back later? No pressure either way; I just want to support you well.</div>
+    </div>
+    <div class="block">
+      <h3>Ghosted — Day 3</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+If timing’s off, I’ll pause my follow‑ups. Before I do: was it the price, the time, or not the right fit?</div>
+    </div>
+    <div class="block">
+      <h3>Ghosted — Day 7</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Last check from me — if the answer is no, totally fine. If it’s a “not yet,” I can hold your link setup for next week. Which helps you most?</div>
+    </div>
+  </section>
+
+  <section id="objections" class="pane">
+    <div class="block">
+      <h3>No Time</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Totally get it. That’s why we run a 7‑minute daily protocol and copy‑paste templates. If we can turn dead scroll time into $‑time in 7 minutes, is that a yes?</div>
+    </div>
+    <div class="block">
+      <h3>No Money</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+You don’t start because you have the money — you start because waiting costs more. The plan option is built for this. Want me to check if $0 down shows for you?</div>
+    </div>
+    <div class="block">
+      <h3>Partner Approval</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Totally respect that. What would help your convo — the 5‑bullet summary or the 12‑min video link for them? I’ll make it easy.</div>
+    </div>
+    <div class="block">
+      <h3>“I tried MLM/NWM — burned.”</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Same — that’s why I chose an **ecosystem + mentorship** model. No comp‑plan roulette. Education + systems + high commissions. Want the bullets on how it’s different?</div>
+    </div>
+    <div class="block">
+      <h3>“I need to think about it.”</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+100%. What specifically are you weighing — time, cash, or fit? I’ll send the exact info to make that decision easy.</div>
+    </div>
+  </section>
+
+  <section id="closing" class="pane">
+    <div class="block">
+      <h3>Clean, Direct Closes</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+If I send the checkout now, can you plug in while you’ve got momentum?</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+Do you want the plan (most do) or one‑and‑done today?</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+I can prefill your checkout and your affiliate link. First name + email and I’ll send it.</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+Before I close your file: is it timing, fit, or clarity? If it’s clarity, 5 bullets and we’re done.</div>
+    </div>
+  </section>
+
+  <section id="postSale" class="pane">
+    <div class="block">
+      <h3>Welcome + First Wins</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Welcome aboard 🎉 I’m setting your dashboard + first 3 actions: (1) Watch the 12‑min setup (2) Post the curiosity story I’ll send (3) Start the 7‑minute daily. We celebrate your first win this week.</div>
+    </div>
+    <div class="block">
+      <h3>Referral Ask</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Who are 2 friends who’d love a second‑act income path? I’ll send them the 12‑min video the same way — no pressure, just clarity.</div>
+    </div>
+  </section>
+</main>
+
+<script>
+  document.querySelectorAll('#subtabs button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#subtabs button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('.pane').forEach(p=>p.classList.remove('show'));
+    document.getElementById(b.dataset.pane).classList.add('show');
+  }));
+  function attachCopy(){
+    document.querySelectorAll('.dm .copy').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const txt = btn.parentElement.innerText.replace('Copy\n','').trim();
+        navigator.clipboard.writeText(txt);
+        btn.textContent='Copied ✓';
+        setTimeout(()=>btn.textContent='Copy',1200);
+      });
+    });
+  }
+  attachCopy();
+</script>
+</body>
+</html>
