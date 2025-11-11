@@ -1,0 +1,59 @@
+:root{
+  --bg:#0f1014; --bg2:#12141a; --card:#171922; --text:#f5f6fa; --muted:#aab0bd;
+  --brand:#6b3fa0; --accent:#d4af37; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{ --bg:#ffffff; --bg2:#f7f7fb; --card:#ffffff; --text:#1a1a22; --muted:#606076; --shadow:0 6px 20px rgba(0,0,0,.08) }
+:root[data-theme="dark-comfort"]{ --bg:#101218; --bg2:#121521; --card:#181b28; --text:#f7f8fc; --muted:#b5bcd0; --shadow:0 10px 30px rgba(0,0,0,.35) }
+
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg2);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.35}
+.mbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--bg);border-bottom:1px solid rgba(120,120,150,.18);padding:10px 12px;z-index:20}
+.muted{color:var(--muted);font-weight:500}
+.mbar button{border:1px solid rgba(120,120,150,.25);background:var(--card);border-radius:10px;padding:8px 10px;color:var(--text)}
+.mbar .ghost{background:transparent}
+
+/* Sidebar */
+.sidebar{position:fixed;top:48px;bottom:0;left:0;width:280px;background:linear-gradient(180deg,#0f1014,#0c0d12);border-right:1px solid rgba(120,120,150,.18);transform:translateX(-100%);transition:.2s;z-index:30;overflow:auto;padding:12px}
+.sidebar.open{transform:none}
+/* Desktop-collapsible behavior baked in */
+@media(min-width:768px){
+  #menuBtn{display:inline-block}
+  /* closed by default on desktop; open when .open */
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:none}
+  aside#sidebar + main{margin-left:0;transition:margin-left .2s ease}
+  aside#sidebar.open + main{margin-left:292px}
+}
+
+.sidebar .brand{display:flex;gap:10px;align-items:center;margin:6px 4px 12px}
+.badge{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--brand))}
+.b1{font-weight:800;color:#e6dbff}.b2{font-weight:700;color:#e4cd7a}
+.sidebar nav button,.sidebar nav .module{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border-radius:12px;border:1px solid rgba(120,120,150,.18);background:rgba(255,255,255,.02);color:var(--text)}
+.sidebar nav button.active{border-color:rgba(130,110,210,.45);background:rgba(130,110,210,.1)}
+.sidebar nav .module{color:#e6dbff;text-decoration:none}
+
+/* Main + cards */
+main{padding:14px;max-width:1040px;margin:0 auto}
+.card{background:var(--card);border:1px solid rgba(120,120,150,.18);box-shadow:var(--shadow);border-radius:16px;padding:14px;margin-bottom:14px}
+.card.sub{background:rgba(255,255,255,.03)}
+h1,h2,h3{margin:0 0 8px 0}
+.grid2{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:720px){.grid2{grid-template-columns:repeat(2,1fr)}}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:720px){.grid3{grid-template-columns:repeat(2,1fr)}}
+label{display:flex;flex-direction:column;gap:6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.sm button{padding:6px 10px}
+input,select,textarea{background:var(--bg);border:1px solid rgba(120,120,150,.25);border-radius:12px;padding:10px 12px;color:var(--text)}
+textarea{width:100%}
+button{background:var(--card);border:1px solid rgba(120,120,150,.25);border-radius:12px;padding:10px 14px;color:var(--text);cursor:pointer}
+button.gold{background:linear-gradient(90deg,#f7d36f,#f0c443);border-color:#e4c45f;color:#1a1a0a;font-weight:700}
+button.ghost{background:transparent}
+button.pill{border-radius:999px;padding:6px 12px;background:var(--bg)}
+.file input{display:none}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-top:1px solid rgba(120,120,150,.18);padding:10px;text-align:left}
+.list{list-style:none;margin:8px 0 0 0;padding:0}
+.list li{display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(120,120,150,.18);background:var(--bg);border-radius:12px;padding:8px 10px;margin:8px 0}
+.journal{list-style:disc;padding-left:20px}
+.panel{display:none}.panel.show{display:block}
+.full{grid-column:1/-1}
