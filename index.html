@@ -1,279 +1,221 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0f1014">
-  <title>LB Command OS v3.2.9</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master Closer Toolkit — DMs Library</title>
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+  body{background:var(--bg2);color:var(--text);}
+  main{max-width:980px;margin:0 auto;padding:16px}
+  .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+  .subtabs button{padding:10px 12px;border-radius:12px;border:1px solid rgba(120,120,150,.25);background:var(--bg);color:var(--text);cursor:pointer}
+  .subtabs button.active{background:linear-gradient(90deg,#f7d36f,#f0c443);border-color:#e4c45f;color:#1a1200;font-weight:800}
+  .pane{display:none}.pane.show{display:block}
+  .block{background:var(--card);border:1px solid rgba(120,120,150,.18);box-shadow:0 6px 20px rgba(0,0,0,.08);border-radius:16px;padding:16px;margin:12px 0}
+  h1,h2,h3{margin:0 0 8px 0}
+  .dm{position:relative;background:var(--bg);border:1px solid rgba(120,120,150,.25);border-radius:12px;padding:12px;margin:10px 0;white-space:pre-wrap}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0 0 0}
+  .pill{border-radius:999px;padding:6px 10px;background:var(--bg);border:1px solid rgba(120,120,150,.25);color:var(--text);cursor:pointer}
+  .copy{position:absolute;right:10px;top:10px}
+  .muted{color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:860px){.grid2{grid-template-columns:1fr 1fr}}
+  code{background:var(--bg2);padding:2px 6px;border-radius:8px;border:1px solid rgba(120,120,150,.18)}
+</style>
 </head>
 <body>
-  <header class="mbar">
-    <button id="menuBtn" aria-label="Open menu">☰</button>
-    <h1>LB Command OS <span class="muted">v3.2.9</span></h1>
-    <button id="installBtn" class="ghost" hidden>Add</button>
-  </header>
+<main>
+  <a href="../../../index.html" style="text-decoration:none;color:#e6dbff">← Back to OS</a>
+  <h1>Master Closer Toolkit</h1>
+  <p class="muted">Use variables like <code>{{name}}</code>, <code>{{pain}}</code>, <code>{{goal}}</code>, <code>{{platform}}</code>. Keep posture, be kind, close cleanly.</p>
 
-  <aside class="sidebar" id="sidebar" aria-label="Main">
-    <div class="brand">
-      <div class="badge"></div>
-      <div>
-        <div class="b1">LegacyBuilt</div>
-        <div class="b2">Command OS</div>
+  <nav class="subtabs" id="subtabs">
+    <button data-pane="rotation" class="active">7‑Day Rotation</button>
+    <button data-pane="openers">Openers</button>
+    <button data-pane="video">Video Flow</button>
+    <button data-pane="followups">Follow‑ups</button>
+    <button data-pane="objections">Objections → Reframes</button>
+    <button data-pane="closing">Closing Lines</button>
+    <button data-pane="postSale">After‑Sale & Referrals</button>
+  </nav>
+
+  <section id="rotation" class="pane show">
+    <div class="block">
+      <h3>Daily Targets (3–7 sales/day)</h3>
+      <ul>
+        <li>10 New Conversations → 10 Nudges → 10 Closes</li>
+        <li>3 Short‑form posts or 10 story slides → drive “INFO/VIDEO”</li>
+        <li>Run the scripts below in order; personalize with {{name}}/{{pain}}</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Day 1 — Connect & Qualify</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Hey {{name}} 🖤 I caught your post about {{pain}}. If you could change one thing about your income in 90 days, what would it be?</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+Curious — are you more time‑poor or cash‑stressed right now? (Helps me send the right 12‑min video vs bullets.)</div>
+    </div>
+    <div class="block">
+      <h3>Day 2 — Value & Next Step</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Based on what you said about {{pain}}, the Elite Founders Bundle is the shortcut I used — not more courses, an ecosystem + mentorship. Want the 12‑min video or a 5‑bullet summary?</div>
+    </div>
+    <div class="block">
+      <h3>Day 3 — Nudge with Micro‑Proof</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Quick nudge — the walkthrough link is ready. I started with $130 and a phone; structure → wins → commissions. Want me to send it now while you’ve got momentum?</div>
+    </div>
+    <div class="block">
+      <h3>Day 4 — Clarify Fit</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+If this helped you hit {{goal}} by {{date}}, what would that change at home? Just making sure I point you to the right path (UGC / affiliate / automation).</div>
+    </div>
+    <div class="block">
+      <h3>Day 5 — Direct Close</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+I can get your link set up in 10 minutes. Do you want in with the payment plan (Klarna has $0 down) or one‑and‑done today?</div>
+    </div>
+    <div class="block">
+      <h3>Day 6 — Risk Reversal</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+You don’t start because you have the money — you start because you can’t afford not to keep waiting. If I send the checkout now, are you good to plug in while it’s open?</div>
+    </div>
+    <div class="block">
+      <h3>Day 7 — Final Nudge</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Closing my list tonight. If this isn’t the move, no worries — I’ll cheer you on. If it is, I’ll set you up so your first wins happen this week. Which way should I mark you?</div>
+    </div>
+  </section>
+
+  <section id="openers" class="pane">
+    <div class="grid2">
+      <div class="block">
+        <h3>Warm (You know them)</h3>
+        <div class="dm"><button class="pill copy">Copy</button>
+Hey {{name}} — I’ve watched you juggle {{life}} like a pro. If you had an extra $2–3K/mo without another boss, what would you use it for first?</div>
+        <div class="dm"><button class="pill copy">Copy</button>
+Random Q: are you open to a short video that shows how I built a 5‑figure stream from my phone in months?</div>
+      </div>
+      <div class="block">
+        <h3>Cold (Reply to Story/Post)</h3>
+        <div class="dm"><button class="pill copy">Copy</button>
+That story hit — you’re not alone. If I sent a no‑fluff 12‑min video on {{topic}} that saves you months of guessing, would you watch it?</div>
+        <div class="dm"><button class="pill copy">Copy</button>
+Curious — have you tried {{platform}} for income before? What held it back?</div>
       </div>
     </div>
-    <nav>
-      <button data-tab="dashboard" class="active">Dashboard</button>
-      <button data-tab="system">System Tracker</button>
-      <button data-tab="leads">Lead Tracker</button>
-      <button data-tab="calendar">Calendar</button>
-      <button data-tab="mindset">Mindset Vault</button>
-      <button data-tab="brand">Brand Library</button>
-      <button data-tab="content">Content Vault</button>
-      <button data-tab="planner">Planner</button>
-      <button data-tab="settings">Settings • Guide</button>
-      <a class="module" href="versions/3.2.9/modules/master-closer-toolkit/index.html">Master Closer Toolkit →</a>
-    </nav>
-  </aside>
+  </section>
 
-  <main id="main">
-    <section id="dashboard" class="panel show">
-      <div class="card">
-        <h2>Today’s Focus</h2>
-        <div class="row">
-          <input id="focusInput" placeholder="follow up">
-          <button class="gold" id="saveFocus">Save</button>
-        </div>
-      </div>
-      <div class="grid2">
-        <div class="card">
-          <h2>Quick Income Tasks</h2>
-          <div class="row">
-            <input id="qiText" placeholder="Add a money-making action">
-            <input id="qiEst" type="number" min="0" step="1" placeholder="$">
-            <button class="gold" id="qiAdd">Add</button>
-          </div>
-          <div class="meta" id="qiMeta">Total planned: $0.00 · Completed: $0.00 (0/0)</div>
-          <ul class="list" id="qiList"></ul>
-          <div class="row">
-            <button class="ghost" id="qiClear">Delete All</button>
-            <button class="ghost" id="qiUndo">Undo</button>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Quick Tasks</h2>
-          <div class="row">
-            <input id="qtText" placeholder="Fast task (under 10 min)">
-            <button class="gold" id="qtAdd">Add</button>
-          </div>
-          <ul class="list" id="qtList"></ul>
-          <div class="row">
-            <button class="ghost" id="qtClear">Delete All</button>
-            <button class="ghost" id="qtUndo">Undo</button>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section id="video" class="pane">
+    <div class="block">
+      <h3>Send Video</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Perfect — here’s the 12‑min walkthrough. It shows the system + mentorship I use. Watch today and I’ll line up your next step while it’s fresh. When done, type “DONE” and I’ll send your setup link.</div>
+    </div>
+    <div class="block">
+      <h3>Check Watch / Nudge</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Did you get a minute to watch it yet? If not, want me to send the 5‑bullet summary so you can decide in 60 seconds?</div>
+    </div>
+    <div class="block">
+      <h3>Price Frame ($699) & Plan</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Clarity check — it’s $699 for the full ecosystem + mentorship. Most choose the plan (Klarna often shows $0 down). Do you want me to prefill checkout for you?</div>
+    </div>
+  </section>
 
-    <section id="system" class="panel">
-      <div class="card">
-        <h2>System Tracker</h2>
-        <div class="grid3">
-          <label>Posts<input id="sys_posts" type="number" min="0"></label>
-          <label>DM Starts<input id="sys_starts" type="number" min="0"></label>
-          <label>DM Nudges<input id="sys_nudges" type="number" min="0"></label>
-          <label>DM Closes<input id="sys_closes" type="number" min="0"></label>
-          <label>Calls<input id="sys_calls" type="number" min="0"></label>
-          <label>Sales ($)<input id="sys_sales" type="number" min="0"></label>
-        </div>
-        <button class="gold" id="saveSystem">Save</button>
-        <ul class="totals" id="sysTotals"></ul>
-      </div>
-    </section>
+  <section id="followups" class="pane">
+    <div class="block">
+      <h3>Ghosted — Day 1</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Quick tap — should I keep this spot open for you, or circle back later? No pressure either way; I just want to support you well.</div>
+    </div>
+    <div class="block">
+      <h3>Ghosted — Day 3</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+If timing’s off, I’ll pause my follow‑ups. Before I do: was it the price, the time, or not the right fit?</div>
+    </div>
+    <div class="block">
+      <h3>Ghosted — Day 7</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Last check from me — if the answer is no, totally fine. If it’s a “not yet,” I can hold your link setup for next week. Which helps you most?</div>
+    </div>
+  </section>
 
-    <section id="leads" class="panel">
-      <div class="card">
-        <h2>Lead Tracker</h2>
-        <div class="row">
-          <input id="leadName" placeholder="Name">
-          <select id="leadStage">
-            <option value="Start">Start</option>
-            <option value="Nudge">Nudge</option>
-            <option value="Close">Close</option>
-          </select>
-          <input id="leadNext" type="date" placeholder="YYYY-MM-DD" inputmode="numeric">
-          <input id="leadNote" placeholder="Note">
-          <button class="gold" id="addLead">Add</button>
-        </div>
-        <div class="row sm">
-          <button class="pill" data-adddays="1">+1 day</button>
-          <button class="pill" data-adddays="3">+3 days</button>
-          <button class="pill" data-adddays="7">+7 days</button>
-          <button class="pill" id="clearNext">Clear</button>
-        </div>
-        <table class="table" id="leadTable">
-          <thead><tr><th>Name</th><th>Stage</th><th>Next</th><th>Note</th><th>Actions</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
+  <section id="objections" class="pane">
+    <div class="block">
+      <h3>No Time</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Totally get it. That’s why we run a 7‑minute daily protocol and copy‑paste templates. If we can turn dead scroll time into $‑time in 7 minutes, is that a yes?</div>
+    </div>
+    <div class="block">
+      <h3>No Money</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+You don’t start because you have the money — you start because waiting costs more. The plan option is built for this. Want me to check if $0 down shows for you?</div>
+    </div>
+    <div class="block">
+      <h3>Partner Approval</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Totally respect that. What would help your convo — the 5‑bullet summary or the 12‑min video link for them? I’ll make it easy.</div>
+    </div>
+    <div class="block">
+      <h3>“I tried MLM/NWM — burned.”</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Same — that’s why I chose an **ecosystem + mentorship** model. No comp‑plan roulette. Education + systems + high commissions. Want the bullets on how it’s different?</div>
+    </div>
+    <div class="block">
+      <h3>“I need to think about it.”</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+100%. What specifically are you weighing — time, cash, or fit? I’ll send the exact info to make that decision easy.</div>
+    </div>
+  </section>
 
-    <section id="calendar" class="panel">
-      <div class="card">
-        <h2>Calendar</h2>
-        <div class="row">
-          <input id="calTitle" placeholder="Title">
-          <input id="calDate" type="date" placeholder="YYYY-MM-DD" inputmode="numeric">
-          <input id="calTime" type="time">
-          <button class="gold" id="addCal">Add</button>
-        </div>
-        <table class="table" id="calTable">
-          <thead><tr><th>When</th><th>Title</th><th>Source</th><th>Actions</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
+  <section id="closing" class="pane">
+    <div class="block">
+      <h3>Clean, Direct Closes</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+If I send the checkout now, can you plug in while you’ve got momentum?</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+Do you want the plan (most do) or one‑and‑done today?</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+I can prefill your checkout and your affiliate link. First name + email and I’ll send it.</div>
+      <div class="dm"><button class="pill copy">Copy</button>
+Before I close your file: is it timing, fit, or clarity? If it’s clarity, 5 bullets and we’re done.</div>
+    </div>
+  </section>
 
-    <section id="mindset" class="panel">
-      <div class="grid2">
-        <div class="card">
-          <h2>Affirmations</h2>
-          <ul id="affirmList"></ul>
-          <div class="row">
-            <input id="newAffirm" placeholder="Add affirmation">
-            <button id="addAffirm">Add</button>
-            <button class="ghost" id="resetAffirmations">Reset</button>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Journal</h2>
-          <textarea id="journalText" rows="8" placeholder="Reflect, wins, gratitude..."></textarea>
-          <button id="saveJournal">Save Entry</button>
-          <ul id="journalList" class="journal"></ul>
-        </div>
-      </div>
-    </section>
+  <section id="postSale" class="pane">
+    <div class="block">
+      <h3>Welcome + First Wins</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Welcome aboard 🎉 I’m setting your dashboard + first 3 actions: (1) Watch the 12‑min setup (2) Post the curiosity story I’ll send (3) Start the 7‑minute daily. We celebrate your first win this week.</div>
+    </div>
+    <div class="block">
+      <h3>Referral Ask</h3>
+      <div class="dm"><button class="pill copy">Copy</button>
+Who are 2 friends who’d love a second‑act income path? I’ll send them the 12‑min video the same way — no pressure, just clarity.</div>
+    </div>
+  </section>
+</main>
 
-    <section id="brand" class="panel">
-      <div class="card">
-        <h2>Brand Library</h2>
-        <div class="grid3">
-          <label>Primary<input id="brandColor" type="color" value="#6b3fa0"></label>
-          <label>Accent<input id="accentColor" type="color" value="#d4af37"></label>
-          <label>Tagline<input id="brandTag" placeholder="Wi‑Fi. Willpower. Wealth."></label>
-          <label class="full">Voice<textarea id="brandVoice" rows="3" placeholder="Bold, sassy, proof‑based…"></textarea></label>
-        </div>
-        <button class="gold" id="saveBrand">Save Brand</button>
-        <h3>Snippets</h3>
-        <textarea id="brandSnips" rows="6" placeholder="Hooks, bios, disclaimers..."></textarea>
-        <button id="saveSnips">Save Snippets</button>
-      </div>
-    </section>
-
-    <section id="content" class="panel">
-      <div class="card">
-        <h2>Content Vault</h2>
-        <p class="muted">Generator: give me a topic + platform and I’ll draft hooks, captions, and post ideas you can edit.</p>
-        <div class="grid3">
-          <label>Topic<input id="genTopic" placeholder="e.g., second‑act Wi‑Fi income"></label>
-          <label>Audience<input id="genAudience" placeholder="e.g., Gen‑X moms"></label>
-          <label>Platform<select id="genPlatform">
-            <option>Facebook</option>
-            <option>TikTok</option>
-            <option>Instagram</option>
-            <option>Threads</option>
-          </select></label>
-          <label>Tone<select id="genTone">
-            <option>Bold</option>
-            <option>Sassy</option>
-            <option>Empathetic</option>
-            <option>Proof‑based</option>
-          </select></label>
-          <label>CTA<select id="genCTA">
-            <option>DM me “LINK”</option>
-            <option>Comment 'INFO'</option>
-            <option>Watch the 12‑min video</option>
-            <option>Join the group</option>
-          </select></label>
-          <label>Length<select id="genLength">
-            <option>Short</option>
-            <option>Medium</option>
-            <option>Long</option>
-          </select></label>
-        </div>
-        <div class="row">
-          <button class="gold" id="genHooks">Generate Hooks</button>
-          <button class="gold" id="genCaptions">Generate Captions</button>
-          <button class="gold" id="genPosts">Generate Posts</button>
-          <button class="ghost" id="addAllToVault">Add All to Vault</button>
-        </div>
-        <div id="genOutput" class="card sub"></div>
-        <h3>Vault</h3>
-        <textarea id="contentVault" rows="12" placeholder="Hooks, captions, CTAs..."></textarea>
-        <div class="row">
-          <button id="saveContent">Save</button>
-          <button class="ghost" id="clearOutput">Clear Output</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="planner" class="panel">
-      <div class="card">
-        <h2>Planner</h2>
-        <textarea id="plannerText" rows="12" placeholder="Plan your week, themes, launch steps..."></textarea>
-        <button id="savePlanner">Save</button>
-      </div>
-    </section>
-
-    <section id="settings" class="panel">
-      <div class="card">
-        <h2>Settings • Guide</h2>
-        <div class="grid3">
-          <label>Brand<input id="setBrand" type="color" value="#6b3fa0"></label>
-          <label>Accent<input id="setAccent" type="color" value="#d4af37"></label>
-          <label>Theme<select id="themeSel">
-            <option value="light">Light</option>
-            <option value="dark" selected>Dark</option>
-            <option value="dark-comfort">Dark Comfort</option>
-            <option value="auto">Auto</option>
-          </select></label>
-        </div>
-        <div class="row">
-          <button class="gold" id="applyTheme">Apply Theme</button>
-          <button id="exportAll">Export</button>
-          <label class="file">Import <input id="importFile" type="file" accept="application/json"></label>
-        </div>
-        <details class="guide">
-          <summary>Open User Guide</summary>
-          <ol>
-            <li>Install on phone (Add to Home Screen). Sidebar becomes a drawer on mobile.</li>
-            <li>Leads: use +1/+3/+7 to set Next date fast, then “Send” to Calendar.</li>
-            <li>Content Vault Generator drafts hooks, captions, and posts offline.</li>
-          </ol>
-        </details>
-      </div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
-  <script>
-    let deferredPrompt;
-    const installBtn = document.getElementById('installBtn');
-    window.addEventListener('beforeinstallprompt', (e)=>{
-      e.preventDefault(); deferredPrompt = e; installBtn.hidden = false;
+<script>
+  document.querySelectorAll('#subtabs button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#subtabs button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('.pane').forEach(p=>p.classList.remove('show'));
+    document.getElementById(b.dataset.pane).classList.add('show');
+  }));
+  function attachCopy(){
+    document.querySelectorAll('.dm .copy').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const txt = btn.parentElement.innerText.replace('Copy\n','').trim();
+        navigator.clipboard.writeText(txt);
+        btn.textContent='Copied ✓';
+        setTimeout(()=>btn.textContent='Copy',1200);
+      });
     });
-    installBtn.addEventListener('click', async ()=>{
-      if(!deferredPrompt) return;
-      deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installBtn.hidden=true;
-    });
-    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('service-worker.js'); }
-    const s=document.getElementById('sidebar'), m=document.getElementById('menuBtn');
-    m.addEventListener('click', ()=> s.classList.toggle('open'));
-    s.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>s.classList.remove('open')));
-  </script>
+  }
+  attachCopy();
+</script>
 </body>
 </html>
