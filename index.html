@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1014">
+  <title>LB Command OS v3.2.9</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="mbar">
+    <button id="menuBtn" aria-label="Open menu">☰</button>
+    <h1>LB Command OS <span class="muted">v3.2.9</span></h1>
+    <button id="installBtn" class="ghost" hidden>Add</button>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Main">
+    <div class="brand">
+      <div class="badge"></div>
+      <div>
+        <div class="b1">LegacyBuilt</div>
+        <div class="b2">Command OS</div>
+      </div>
+    </div>
+    <nav>
+      <button data-tab="dashboard" class="active">Dashboard</button>
+      <button data-tab="system">System Tracker</button>
+      <button data-tab="leads">Lead Tracker</button>
+      <button data-tab="calendar">Calendar</button>
+      <button data-tab="mindset">Mindset Vault</button>
+      <button data-tab="brand">Brand Library</button>
+      <button data-tab="content">Content Vault</button>
+      <button data-tab="planner">Planner</button>
+      <button data-tab="settings">Settings • Guide</button>
+      <a class="module" href="versions/3.2.9/modules/master-closer-toolkit/index.html">Master Closer Toolkit →</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="dashboard" class="panel show">
+      <div class="card">
+        <h2>Today’s Focus</h2>
+        <div class="row">
+          <input id="focusInput" placeholder="follow up">
+          <button class="gold" id="saveFocus">Save</button>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h2>Quick Income Tasks</h2>
+          <div class="row">
+            <input id="qiText" placeholder="Add a money-making action">
+            <input id="qiEst" type="number" min="0" step="1" placeholder="$">
+            <button class="gold" id="qiAdd">Add</button>
+          </div>
+          <div class="meta" id="qiMeta">Total planned: $0.00 · Completed: $0.00 (0/0)</div>
+          <ul class="list" id="qiList"></ul>
+          <div class="row">
+            <button class="ghost" id="qiClear">Delete All</button>
+            <button class="ghost" id="qiUndo">Undo</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Quick Tasks</h2>
+          <div class="row">
+            <input id="qtText" placeholder="Fast task (under 10 min)">
+            <button class="gold" id="qtAdd">Add</button>
+          </div>
+          <ul class="list" id="qtList"></ul>
+          <div class="row">
+            <button class="ghost" id="qtClear">Delete All</button>
+            <button class="ghost" id="qtUndo">Undo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="panel">
+      <div class="card">
+        <h2>System Tracker</h2>
+        <div class="grid3">
+          <label>Posts<input id="sys_posts" type="number" min="0"></label>
+          <label>DM Starts<input id="sys_starts" type="number" min="0"></label>
+          <label>DM Nudges<input id="sys_nudges" type="number" min="0"></label>
+          <label>DM Closes<input id="sys_closes" type="number" min="0"></label>
+          <label>Calls<input id="sys_calls" type="number" min="0"></label>
+          <label>Sales ($)<input id="sys_sales" type="number" min="0"></label>
+        </div>
+        <button class="gold" id="saveSystem">Save</button>
+        <ul class="totals" id="sysTotals"></ul>
+      </div>
+    </section>
+
+    <section id="leads" class="panel">
+      <div class="card">
+        <h2>Lead Tracker</h2>
+        <div class="row">
+          <input id="leadName" placeholder="Name">
+          <select id="leadStage">
+            <option value="Start">Start</option>
+            <option value="Nudge">Nudge</option>
+            <option value="Close">Close</option>
+          </select>
+          <input id="leadNext" type="date" placeholder="YYYY-MM-DD" inputmode="numeric">
+          <input id="leadNote" placeholder="Note">
+          <button class="gold" id="addLead">Add</button>
+        </div>
+        <div class="row sm">
+          <button class="pill" data-adddays="1">+1 day</button>
+          <button class="pill" data-adddays="3">+3 days</button>
+          <button class="pill" data-adddays="7">+7 days</button>
+          <button class="pill" id="clearNext">Clear</button>
+        </div>
+        <table class="table" id="leadTable">
+          <thead><tr><th>Name</th><th>Stage</th><th>Next</th><th>Note</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="calendar" class="panel">
+      <div class="card">
+        <h2>Calendar</h2>
+        <div class="row">
+          <input id="calTitle" placeholder="Title">
+          <input id="calDate" type="date" placeholder="YYYY-MM-DD" inputmode="numeric">
+          <input id="calTime" type="time">
+          <button class="gold" id="addCal">Add</button>
+        </div>
+        <table class="table" id="calTable">
+          <thead><tr><th>When</th><th>Title</th><th>Source</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="mindset" class="panel">
+      <div class="grid2">
+        <div class="card">
+          <h2>Affirmations</h2>
+          <ul id="affirmList"></ul>
+          <div class="row">
+            <input id="newAffirm" placeholder="Add affirmation">
+            <button id="addAffirm">Add</button>
+            <button class="ghost" id="resetAffirmations">Reset</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Journal</h2>
+          <textarea id="journalText" rows="8" placeholder="Reflect, wins, gratitude..."></textarea>
+          <button id="saveJournal">Save Entry</button>
+          <ul id="journalList" class="journal"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="brand" class="panel">
+      <div class="card">
+        <h2>Brand Library</h2>
+        <div class="grid3">
+          <label>Primary<input id="brandColor" type="color" value="#6b3fa0"></label>
+          <label>Accent<input id="accentColor" type="color" value="#d4af37"></label>
+          <label>Tagline<input id="brandTag" placeholder="Wi‑Fi. Willpower. Wealth."></label>
+          <label class="full">Voice<textarea id="brandVoice" rows="3" placeholder="Bold, sassy, proof‑based…"></textarea></label>
+        </div>
+        <button class="gold" id="saveBrand">Save Brand</button>
+        <h3>Snippets</h3>
+        <textarea id="brandSnips" rows="6" placeholder="Hooks, bios, disclaimers..."></textarea>
+        <button id="saveSnips">Save Snippets</button>
+      </div>
+    </section>
+
+    <section id="content" class="panel">
+      <div class="card">
+        <h2>Content Vault</h2>
+        <p class="muted">Generator: give me a topic + platform and I’ll draft hooks, captions, and post ideas you can edit.</p>
+        <div class="grid3">
+          <label>Topic<input id="genTopic" placeholder="e.g., second‑act Wi‑Fi income"></label>
+          <label>Audience<input id="genAudience" placeholder="e.g., Gen‑X moms"></label>
+          <label>Platform<select id="genPlatform">
+            <option>Facebook</option>
+            <option>TikTok</option>
+            <option>Instagram</option>
+            <option>Threads</option>
+          </select></label>
+          <label>Tone<select id="genTone">
+            <option>Bold</option>
+            <option>Sassy</option>
+            <option>Empathetic</option>
+            <option>Proof‑based</option>
+          </select></label>
+          <label>CTA<select id="genCTA">
+            <option>DM me “LINK”</option>
+            <option>Comment 'INFO'</option>
+            <option>Watch the 12‑min video</option>
+            <option>Join the group</option>
+          </select></label>
+          <label>Length<select id="genLength">
+            <option>Short</option>
+            <option>Medium</option>
+            <option>Long</option>
+          </select></label>
+        </div>
+        <div class="row">
+          <button class="gold" id="genHooks">Generate Hooks</button>
+          <button class="gold" id="genCaptions">Generate Captions</button>
+          <button class="gold" id="genPosts">Generate Posts</button>
+          <button class="ghost" id="addAllToVault">Add All to Vault</button>
+        </div>
+        <div id="genOutput" class="card sub"></div>
+        <h3>Vault</h3>
+        <textarea id="contentVault" rows="12" placeholder="Hooks, captions, CTAs..."></textarea>
+        <div class="row">
+          <button id="saveContent">Save</button>
+          <button class="ghost" id="clearOutput">Clear Output</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="planner" class="panel">
+      <div class="card">
+        <h2>Planner</h2>
+        <textarea id="plannerText" rows="12" placeholder="Plan your week, themes, launch steps..."></textarea>
+        <button id="savePlanner">Save</button>
+      </div>
+    </section>
+
+    <section id="settings" class="panel">
+      <div class="card">
+        <h2>Settings • Guide</h2>
+        <div class="grid3">
+          <label>Brand<input id="setBrand" type="color" value="#6b3fa0"></label>
+          <label>Accent<input id="setAccent" type="color" value="#d4af37"></label>
+          <label>Theme<select id="themeSel">
+            <option value="light">Light</option>
+            <option value="dark" selected>Dark</option>
+            <option value="dark-comfort">Dark Comfort</option>
+            <option value="auto">Auto</option>
+          </select></label>
+        </div>
+        <div class="row">
+          <button class="gold" id="applyTheme">Apply Theme</button>
+          <button id="exportAll">Export</button>
+          <label class="file">Import <input id="importFile" type="file" accept="application/json"></label>
+        </div>
+        <details class="guide">
+          <summary>Open User Guide</summary>
+          <ol>
+            <li>Install on phone (Add to Home Screen). Sidebar becomes a drawer on mobile.</li>
+            <li>Leads: use +1/+3/+7 to set Next date fast, then “Send” to Calendar.</li>
+            <li>Content Vault Generator drafts hooks, captions, and posts offline.</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
+    window.addEventListener('beforeinstallprompt', (e)=>{
+      e.preventDefault(); deferredPrompt = e; installBtn.hidden = false;
+    });
+    installBtn.addEventListener('click', async ()=>{
+      if(!deferredPrompt) return;
+      deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installBtn.hidden=true;
+    });
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('service-worker.js'); }
+    const s=document.getElementById('sidebar'), m=document.getElementById('menuBtn');
+    m.addEventListener('click', ()=> s.classList.toggle('open'));
+    s.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>s.classList.remove('open')));
+  </script>
+</body>
+</html>
